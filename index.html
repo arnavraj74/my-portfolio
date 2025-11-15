@@ -4,107 +4,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
-        .navbar {
-            width: 90%;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        .home {
-            background-image: url('https://stock.adobe.com/search?k=backgrounds.jpg');
-            color: rgb(14, 14, 14);
-            text-align: center;
-            padding: 100px 200px;
-        }
-        .btn {
-            display: inline-block;
-            background-color:#3ddee6;
-            color: #2a10d7;
-            padding: 10px 20px;
-            text-decoration: none;
-            margin-top: 15px;
-            border-radius: 5px;
-        }
-        .about {
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .about-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #0f0f10;
+        color: #333;
+        backdrop-filter: blur(3px);
+    }
+    .section-heading {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 42px;
+        text-align: center;
+        letter-spacing: 1px;
+        background: linear-gradient(90deg, #e6f560, #da9021, #ed1717);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0px 0px 12px rgba(255, 215, 0, 0.35);
+    }
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(235, 243, 247, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+    }
+    .navbar {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-family: 'UnifrakturMaguntia', cursive;
+        font-size: 42px;
+        letter-spacing: 2px;
+        color: #ffd700;
+    }
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+    }
+    .nav-links a {
+        color: rgb(236, 182, 83);
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        padding: 5px 0;
+        transition: 0.3s ease;
+    }
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 0%;
+        background: #ffd700;
+        transition: width 0.3s ease;
+        border-radius: 2px;
+    }
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+    .nav-links a:hover {
+        color: #ffd700;
+    }
+    .nav-links a.active {
+        color: #ffd700;
+    }
+    .home {
+        background: url("background 3.webp") center/cover no-repeat;
+        color: rgb(237, 238, 248);
+        text-align: center;
+        padding: 120px 20px;
+        background-attachment: fixed;
+    }
+    .about {
+        padding: 80px 20px;
+        text-align: center;
+        background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+        background-attachment: fixed;
+    }
+    .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    .about-text {
+        max-width: 500px;
+        background: rgba(255, 255, 255, 0.25);
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(12px);
+        color: rgb(10, 9, 9);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .about img {
+        width: 250px;
+        border-radius: 50%;
+        border: 4px solid rgba(113, 21, 21, 0.6);
+    }
+    .education {
+        padding: 80px 20px;
+        text-align: center;
+        background: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+        background-attachment: fixed;
+        color: white;
+    }
+    .projects {
+        padding: 80px 20px;
+        text-align: center;
+        background: url("https://images.unsplash.com/photo-1542451544-1f5a94b3b8b5?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+        background-attachment: fixed;
+        color: white;
+    }
+    .project-list {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .project-card {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 15px;
+        padding: 20px;
+        width: 300px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        color: white;
+        transition: 0.3s ease;
+    }
+    .project-card:hover {
+        transform: scale(1.05);
+    }
+    .project-card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .contact {
+        padding: 80px 20px;
+        text-align: center;
+        background: url("https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+        background-attachment: fixed;
+        color: white;
+    }
+    .contact-info {
+        background: rgba(255, 255, 255, 0.2);
+        display: inline-block;
+        padding: 25px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    footer {
+        background: rgba(30, 58, 138, 0.35);
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <h1 class="logo">PORTFOLIO</h1>
-            <ul class="nav-links">
-                <li><a href="HOME">HOME</a></li>
-                <li><a href="ABOUT ME">ABOUT ME</a></li>
-                <li><a href="EDUCATION/SKILLS">EDUCATION/SKILLS</a></li>
-                <li><a href="PROJECTS/PORTFOLIO">PROJECTS/PORTFOLIO</a></li>
-                <li><a href="CONTACT INFORMATION">CONTACT INFORMATION</a></li>
-            </ul>
-        </nav> 
-    </header>
+    <nav class="navbar">
+        <h1 class="logo">PORTFOLIO</h1>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#education" class="nav-item">Education</a></li>
+            <li><a href="#projects" class="nav-item">Projects</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
     <section id="home" class="home">
         <div class="intro">
-            <h2>Hello I am a student of <b>DELHI TECHNOLOGICAL UNIVERSITY</b> </h2>
-            <p>I am always curious to make websites and devlop apps.</p>
+            <h2 class="section-heading">Hello, I am a student of <br><b>DELHI TECHNOLOGICAL UNIVERSITY</b></h2>
+            <p>I am always curious to make websites and develop apps.</p>
             <a href="#projects" class="btn">View my work</a>
         </div>
     </section>
-
-    <section id="ABOUT ME" class="about">
-        <h2><u>ABOUT ME</u></h2>
-        <div class="about container">
-            <img src="profilepic.jpg" alt="PROFILE PHOTO">
+    <section id="about" class="about">
+        <h2 class="section-heading"><u>ABOUT ME</u></h2>
+        <div class="about-container">
+            <img src="profilepic2.jpg" alt="PROFILE PHOTO">
             <div class="about-text">
                 <p>
                      I'm a dedicated and creative developer with a passion for building modern, responsive websites. 
-                    I enjoy solving problems through design and code while continuously learning new technologies.
+                     I enjoy solving problems through design and code while continuously learning new technologies.
                 </p>
             </div>
         </div>
     </section>
-    
-    <section id="EDUCATION/SKILLS" class="education">
-        <h2><u>EDUCATION/SKILLS</u></h2>
+    <section id="education" class="education">
+        <h2 class="section-heading"><u>EDUCATION & SKILLS</u></h2>
         <div class="edu-container">
             <div class="education-items">
-                <h3>Bachelor of <b>COMPUTER SCIENCE</b></h3>
-                <p>Delhi technological University</p>
+                <h3>Bachelor in <b>TECHNOLOGY</b></h3>
+                <p>Computer Science Engineering, Delhi Technological University</p>
             </div>
-                <div class="skills">
+            <div class="skills">
                 <h3>Technical Skills</h3>
                 <ul>
-                    <li>HTML5, CSS3, C language</li>
+                    <li>HTML5, CSS3, C Programming</li>
                     <li>Git, GitHub</li>
                     <li>Responsive Web Design</li>
                 </ul>
             </div>
         </div>
     </section>
-
-    <section id="PROJECTS/PORTFOLIO" class="Projects">
-        <h2><u>MY PROJECTS</u></h2>
-        <div class="project-lists">
+    <section id="projects" class="projects">
+        <h2 class="section-heading"><u>MY PROJECTS</u></h2>
+        <div class="project-list">
             <div class="project-card">
-                <img src=""
+                <img src="portfoliowebsite.png" alt="Project 1">
+                <h3>My Portfolio Website</h3>
+                <p>A responsive personal portfolio built with HTML, CSS, and JavaScript.</p>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+            <div class="project-card">
+                <img src="profilecard.png" alt="Project 2">
+                <h3>Profile Card</h3>
+                <p>A simple profile card made using HTML & CSS.</p>
+            </div>
+            <div class="project-card">
+                <img src="linkdinpic.png" alt="Project 3">
+                <h3>LinkedIn Profile</h3>
+                <p>My professional LinkedIn page.</p>
+                <a href="#" target="_blank">View</a>
             </div>
         </div>
     </section>
-</body>    
+    <section id="contact" class="contact">
+        <h2 class="section-heading"><u>CONTACT INFORMATION</u></h2>
+        <p>If you'd like to get in touch, feel free to reach out.</p>
+        <ul class="contact-info">
+            <li>Email: <a href="mailto:arnavraj063cse1@gmail.com">arnavraj063cse1@gmail.com</a></li>
+            <li>Phone: <a href="tel:+917050019290">+91 7050019290</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/arnav-raj-6274ssb/" target="_blank">LinkedIn</a></li>
+            <li>GitHub: <a href="https://github.com/arnavraj74" target="_blank">GitHub</a></li>
+        </ul>
+    </section>
+    <footer>
+        <p>All rights reserved. ARNAV RAJ</p>
+    </footer>
+</body>
 </html>
