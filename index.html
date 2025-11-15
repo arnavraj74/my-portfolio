@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <style>
+        .navbar {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .home {
+            background-image: url('https://stock.adobe.com/search?k=backgrounds.jpg');
+            color: rgb(14, 14, 14);
+            text-align: center;
+            padding: 100px 200px;
+        }
+        .btn {
+            display: inline-block;
+            background-color:#3ddee6;
+            color: #2a10d7;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .about-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">PORTFOLIO</h1>
+            <ul class="nav-links">
+                <li><a href="HOME">HOME</a></li>
+                <li><a href="ABOUT ME">ABOUT ME</a></li>
+                <li><a href="EDUCATION/SKILLS">EDUCATION/SKILLS</a></li>
+                <li><a href="PROJECTS/PORTFOLIO">PROJECTS/PORTFOLIO</a></li>
+                <li><a href="CONTACT INFORMATION">CONTACT INFORMATION</a></li>
+            </ul>
+        </nav> 
+    </header>
+    <section id="home" class="home">
+        <div class="intro">
+            <h2>Hello I am a student of <b>DELHI TECHNOLOGICAL UNIVERSITY</b> </h2>
+            <p>I am always curious to make websites and devlop apps.</p>
+            <a href="#projects" class="btn">View my work</a>
+        </div>
+    </section>
+
+    <section id="ABOUT ME" class="about">
+        <h2><u>ABOUT ME</u></h2>
+        <div class="about container">
+            <img src="profilepic.jpg" alt="PROFILE PHOTO">
+            <div class="about-text">
+                <p>
+                     I'm a dedicated and creative developer with a passion for building modern, responsive websites. 
+                    I enjoy solving problems through design and code while continuously learning new technologies.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="EDUCATION/SKILLS" class="education">
+        <h2><u>EDUCATION/SKILLS</u></h2>
+        <div class="edu-container">
+            <div class="education-items">
+                <h3>Bachelor of <b>COMPUTER SCIENCE</b></h3>
+                <p>Delhi technological University</p>
+            </div>
+                <div class="skills">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>HTML5, CSS3, C language</li>
+                    <li>Git, GitHub</li>
+                    <li>Responsive Web Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="PROJECTS/PORTFOLIO" class="Projects">
+        <h2><u>MY PROJECTS</u></h2>
+        <div class="project-lists">
+            <div class="project-card">
+                <img src=""
+            </div>
+        </div>
+    </section>
+</body>    
+</html>
